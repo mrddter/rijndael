@@ -15,7 +15,6 @@ setup(
     license='MIT',
     description='Rijndael AES encryption algorithm in pure python.',
     url='https://github.com/moeenz/rijndael',
-    install_requires=['pycrypto'],
     classifiers=[
         'Environment :: Console',
         'Operating System :: Microsoft :: Windows',

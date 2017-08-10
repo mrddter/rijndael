@@ -1,14 +1,25 @@
-#!/usr/bin/env python
+import os
+from setuptools import find_packages, setup
 
-from setuptools import setup, find_packages
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-setup(name='CryptoPlus',
-      version='1.0',
-      description='PyCrypto Cipher extension',
-      author='Christophe Oosterlynck',
-      author_email='tiftof@gmail.com',
-      packages = find_packages('src'),
-      install_requires = ['pycrypto'],
-      package_dir={'': 'src'}
-     )
-
+setup(
+    name='rijndael',
+    version='0.1.0',
+    packages=find_packages(),
+    test_suite='rijndael.tests',
+    include_package_data=True,
+    author='Moeen Zamani',
+    author_email='moeen.zamani@gmail.com',
+    license='MIT',
+    description='Rijndael AES encryption algorithm in pure python.',
+    url='https://github.com/moeenz/rijndael',
+    install_requires=['pycrypto'],
+    classifiers=[
+        'Environment :: Console',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: Unix',
+        'Programming Language :: Python'
+    ],
+)

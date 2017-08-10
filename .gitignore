@@ -1,6 +1,8 @@
 *.pyc
-*~
+__pycache__
 dist/
 build/
 MANIFEST
 CryptoPlus.egg-info/
+
+venv/*

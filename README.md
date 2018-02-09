@@ -12,8 +12,8 @@ First install rijndael from PyPi
 ```
 and now you can use encryption/decryption system.
 ```python
-    from rindael.cipher.crypt import new
-    from rijndal.cipher.blockcipher import MODE_CBC
+    from rijndael.cipher.crypt import new
+    from rijndael.cipher.blockcipher import MODE_CBC
     
     rjn = new(KEY, MODE_CBC, IV, blocksize=BLOCKSIZE)
     encd = rjn.encrypt('A padded string to BLOCKSIZE length.')

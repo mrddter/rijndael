@@ -55,25 +55,25 @@ class BlockCipher():
         else:
             self.IV = IV
 
-        if mode <> MODE_XTS:
+        if mode != MODE_XTS:
             self.cipher = cipher_module(self.key,**args)
         if mode == MODE_ECB:
             self.chain = ECB(self.cipher, self.blocksize)
         elif mode == MODE_CBC:
-            if len(self.IV) <> self.blocksize:
+            if len(self.IV) != self.blocksize:
                 raise Exception,"the IV length should be %i bytes"%self.blocksize
             self.chain = CBC(self.cipher, self.blocksize,self.IV)
         elif mode == MODE_CFB:
-            if len(self.IV) <> self.blocksize:
+            if len(self.IV) != self.blocksize:
                 raise Exception,"the IV length should be %i bytes"%self.blocksize
             if segment_size == None:
                 raise ValueError,"segment size must be defined explicitely for CFB mode"
-            if segment_size > self.blocksize*8 or segment_size%8 <> 0:
+            if segment_size > self.blocksize*8 or segment_size%8 != 0:
                 # current CFB implementation doesn't support bit level acces => segment_size should be multiple of bytes
                 raise ValueError,"segment size should be a multiple of 8 bits between 8 and %i"%(self.blocksize*8)
             self.chain = CFB(self.cipher, self.blocksize,self.IV,segment_size)
         elif mode == MODE_OFB:
-            if len(self.IV) <> self.blocksize:
+            if len(self.IV) != self.blocksize:
                 raise ValueError("the IV length should be %i bytes"%self.blocksize)
             self.chain = OFB(self.cipher, self.blocksize,self.IV)
         elif mode == MODE_CTR:
@@ -81,7 +81,7 @@ class BlockCipher():
                 raise Exception,"Supply a valid counter object for the CTR mode"
             self.chain = CTR(self.cipher,self.blocksize,counter)
         elif mode == MODE_XTS:
-            if self.blocksize <> 16:
+            if self.blocksize != 16:
                 raise Exception,'XTS only works with blockcipher that have a 128-bit blocksize'
             if not(type(key) == tuple and len(key) == 2):
                 raise Exception,'Supply two keys as a tuple when using XTS'

@@ -1,9 +1,9 @@
 # Rijndael
-[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Build Status](https://travis-ci.org/moeenz/rijndael.svg?branch=master)](https://travis-ci.org/moeenz/rijndael) <br>
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php) [![Build Status](https://travis-ci.org/moeenz/rijndael.svg?branch=master)](https://travis-ci.org/moeenz/rijndael)
+
 A fully implementation of Rijndael encryption in pure Python.
-<p align="center">
-	<img src="rijndael.png" alt="Index"/>
-</p>
+
+![Index](rijndael.png)
 
 # Usage
 First install rijndael from PyPi
